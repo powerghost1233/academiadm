@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química II - 2º Bachillerato | David Milan Academy</title>
+<a href="index.html" class="back-link">← Volver a la Academia</a>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #2ecc71; /* Verde Químico */
+            --text-main: #e6f1ff;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+
+        header {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), 
+                        url('https://images.unsplash.com/photo-1532187875605-2fe35f743ee2?auto=format&fit=crop&q=80');
+            background-size: cover; text-align: center; border-bottom: 2px solid var(--accent);
+        }
+
+        .ebau-badge {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+        
+        .sidebar { position: sticky; top: 20px; height: fit-content; }
+        .sidebar h4 { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 2px; border-left: 2px solid var(--accent); padding-left: 15px; }
+        .sidebar ul { list-style: none; }
+        .sidebar ul li { margin-bottom: 18px; }
+        .sidebar ul li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: block; }
+        .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
+
+        .unit-section { background: var(--secondary); border-radius: 15px; padding: 40px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
+        .unit-section:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(46, 204, 113, 0.05); }
+        .unit-tag { color: var(--accent); font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; display: block; text-transform: uppercase; }
+        
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 25px 0; }
+        .topic-item { color: var(--text-dim); font-size: 0.9rem; display: flex; align-items: center; }
+        .topic-item::before { content: "⌬"; color: var(--accent); margin-right: 12px; font-size: 1rem; }
+
+        .unit-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+        .btn-unit { flex: 1; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: 1px solid var(--accent); color: var(--accent); min-width: 120px; }
+        .btn-filled { background: var(--accent); color: var(--primary); }
+        .btn-unit:hover { background: var(--accent); color: var(--primary); transform: translateY(-3px); }
+
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display:block;">
+            <a href="index.html" style="color:var(--accent); text-decoration:none; font-size:0.8rem;">← VOLVER AL PANEL</a>
+            <div class="ebau-badge" style="margin-top:20px;">Ciencias Químicas EBAU</div>
+            <h1>Química II</h1>
+            <p style="color: var(--text-dim)">Dominio de la materia y sus transformaciones</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h4>Bloques Química</h4>
+            <ul>
+                <li><a href="#u1">01. Átomo y Sistema Periódico</a></li>
+                <li><a href="#u2">02. Enlace Químico y Termo</a></li>
+                <li><a href="#u3">03. Equilibrio Químico</a></li>
+                <li><a href="#u4">04. Ácido-Base y Red-Ox</a></li>
+                <li><a href="#u5">05. Química Orgánica</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="u1" class="unit-section">
+                <span class="unit-tag">Unidad 01</span>
+                <h2>Estructura de la Materia</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Modelos Atómicos (Cuántico)</div>
+                    <div class="topic-item">Configuraciones Electrónicas</div>
+                    <div class="topic-item">Propiedades Periódicas</div>
+                    <div class="topic-item">Efecto Fotoeléctrico Atómico</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u2" class="unit-section">
+                <span class="unit-tag">Unidad 02</span>
+                <h2>Enlace y Termoquímica</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Enlace Iónico, Covalente y Metálico</div>
+                    <div class="topic-item">Geometría Molecular (RPECV)</div>
+                    <div class="topic-item">Entalpía (Ley de Hess)</div>
+                    <div class="topic-item">Entropía y Energía Libre</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u3" class="unit-section">
+                <span class="unit-tag">Unidad 03</span>
+                <h2>Cinética y Equilibrio</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Velocidad de Reacción</div>
+                    <div class="topic-item">Constantes Kc y Kp</div>
+                    <div class="topic-item">Principio de Le Chatelier</div>
+                    <div class="topic-item">Equilibrios de Solubilidad (Ks)</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u4" class="unit-section">
+                <span class="unit-tag">Unidad 04</span>
+                <h2>Transferencia de Protones y Electrones</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Teoría de Brönsted-Lowry</div>
+                    <div class="topic-item">Cálculo de pH y Volumetrías</div>
+                    <div class="topic-item">Ajuste Red-Ox (Ión-Electrón)</div>
+                    <div class="topic-item">Pilas y Celdas Electrolíticas</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u5" class="unit-section" style="border-left: 4px solid var(--accent);">
+                <span class="unit-tag">Unidad 05</span>
+                <h2>Química del Carbono</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Formulación y Nomenclatura</div>
+                    <div class="topic-item">Isomería (Estructural y Espacial)</div>
+                    <div class="topic-item">Reacciones Orgánicas</div>
+                    <div class="topic-item">Polímeros y Macromoléculas</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer style="text-align:center; padding: 60px; color:var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05);">
+        &copy; 2026 David Milan Academy | Área de Ciencias Químicas.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física y Química - 1º Bachillerato | David Milan Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<a href="index.html" class="back-link">← Volver a la Academia</a>
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #ffae00; /* He cambiado a un tono naranja/dorado para diferenciar Física de Matemáticas */
+            --text-main: #e6f1ff;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--primary); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            scroll-behavior: smooth; 
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 80px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), 
+                        url('https://images.unsplash.com/photo-1636466484362-c97d474af773?auto=format&fit=crop&q=80');
+            background-size: cover; 
+            text-align: center; 
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .back-link { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            transition: 0.3s;
+        }
+        .back-link:hover { opacity: 0.7; }
+
+        h1 { font-size: 3rem; color: var(--white); margin-top: 15px; }
+        .course-info { color: var(--accent); font-weight: 300; letter-spacing: 2px; }
+
+        /* --- LAYOUT PRINCIPAL --- */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            display: grid; 
+            grid-template-columns: 280px 1fr; 
+            gap: 40px; 
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar { position: sticky; top: 40px; height: fit-content; }
+        .sidebar h4 { 
+            color: var(--accent); 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            margin-bottom: 25px; 
+            letter-spacing: 2px; 
+            border-left: 2px solid var(--accent);
+            padding-left: 15px;
+        }
+        .sidebar ul { list-style: none; }
+        .sidebar ul li { margin-bottom: 18px; }
+        .sidebar ul li a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+            display: block;
+        }
+        .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
+
+        /* --- UNIDADES --- */
+        .unit-section { 
+            background: var(--secondary); 
+            border-radius: 15px; 
+            padding: 40px; 
+            margin-bottom: 40px; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s ease;
+        }
+        .unit-section:hover { border-color: var(--accent); }
+
+        .unit-tag { 
+            background: rgba(255, 174, 0, 0.1); 
+            color: var(--accent); 
+            padding: 5px 15px; 
+            border-radius: 4px; 
+            font-size: 0.7rem; 
+            font-weight: bold; 
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .topics-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
+            margin-bottom: 35px; 
+        }
+        .topic-item { 
+            color: var(--text-dim); 
+            font-size: 0.9rem; 
+            display: flex; 
+            align-items: center; 
+        }
+        .topic-item::before { 
+            content: "⚡"; 
+            margin-right: 12px; 
+            font-size: 0.8rem;
+        }
+
+        /* --- BOTONES --- */
+        .unit-actions { 
+            display: flex; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+            border-top: 1px solid rgba(255,255,255,0.05); 
+            padding-top: 25px; 
+        }
+        .btn-unit { 
+            flex: 1; 
+            text-align: center; 
+            padding: 14px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            transition: 0.3s;
+            min-width: 140px;
+        }
+        .btn-notes { background: rgba(255,255,255,0.03); color: var(--white); border: 1px solid rgba(255,255,255,0.1); }
+        .btn-exercises { background: rgba(255, 174, 0, 0.05); color: var(--accent); border: 1px solid var(--accent); }
+        .btn-video { background: var(--accent); color: var(--primary); }
+
+        footer { background: #060e1a; padding: 60px 0; text-align: center; }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container-header">
+            <a href="index.html" class="back-link">← Volver a la Academia</a>
+            <h1>Física y Química</h1>
+            <p class="course-info">1º de Bachillerato | Ciencias y Tecnología</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h4>Temario de Física</h4>
+            <ul>
+                <li><a href="#u1">01. Magnitudes y Vectores</a></li>
+                <li><a href="#u2">02. Cinemática (MRU/MRUA)</a></li>
+                <li><a href="#u3">03. Dinámica (Leyes Newton)</a></li>
+                <li><a href="#u4">04. Energía y Trabajo</a></li>
+                <li><a href="#u5">05. Química: Estequiometría</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            
+            <section id="u1" class="unit-section">
+                <span class="unit-tag">Unidad 01</span>
+                <h2>Herramientas Matemáticas</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Análisis Dimensional</div>
+                    <div class="topic-item">Cálculo Vectorial básico</div>
+                    <div class="topic-item">Errores y Medida</div>
+                    <div class="topic-item">Factores de Conversión</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit btn-notes">Apuntes</a>
+                    <a href="#" class="btn-unit btn-exercises">Problemas</a>
+                    <a href="#" class="btn-unit btn-video">Vídeo</a>
+                </div>
+            </section>
+
+            <section id="u2" class="unit-section">
+                <span class="unit-tag">Unidad 02</span>
+                <h2>Cinemática</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">MRU y MRUA</div>
+                    <div class="topic-item">Caída Libre y Lanzamiento</div>
+                    <div class="topic-item">Movimiento Circular (MCU)</div>
+                    <div class="topic-item">Composición de movimientos</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit btn-notes">Apuntes</a>
+                    <a href="#" class="btn-unit btn-exercises">Problemas</a>
+                    <a href="#" class="btn-unit btn-video">Vídeo</a>
+                </div>
+            </section>
+
+            <section id="u3" class="unit-section">
+                <span class="unit-tag">Unidad 03</span>
+                <h2>Dinámica</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Las 3 Leyes de Newton</div>
+                    <div class="topic-item">Fuerza de Rozamiento</div>
+                    <div class="topic-item">Planos Inclinados</div>
+                    <div class="topic-item">Tensiones y Poleas</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit btn-notes">Apuntes</a>
+                    <a href="#" class="btn-unit btn-exercises">Problemas</a>
+                    <a href="#" class="btn-unit btn-video">Vídeo</a>
+                </div>
+            </section>
+
+            <section id="u4" class="unit-section">
+                <span class="unit-tag">Unidad 04</span>
+                <h2>Energía, Trabajo y Potencia</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Energía Cinética y Potencial</div>
+                    <div class="topic-item">Conservación de la Energía</div>
+                    <div class="topic-item">Trabajo Mecánico</div>
+                    <div class="topic-item">Potencia y Rendimiento</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit btn-notes">Apuntes</a>
+                    <a href="#" class="btn-unit btn-exercises">Problemas</a>
+                    <a href="#" class="btn-unit btn-video">Vídeo</a>
+                </div>
+            </section>
+
+            <section id="u5" class="unit-section" style="border-left: 4px solid var(--accent);">
+                <span class="unit-tag">Unidad 05</span>
+                <h2>Química: Átomos y Moléculas</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Leyes de los gases ideales</div>
+                    <div class="topic-item">Disoluciones y Molaridad</div>
+                    <div class="topic-item">Cálculos Estequiométricos</div>
+                    <div class="topic-item">Rendimiento y Pureza</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit btn-notes">Apuntes</a>
+                    <a href="#" class="btn-unit btn-exercises">Problemas</a>
+                    <a href="#" class="btn-unit btn-video">Vídeo</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p style="color: var(--white);">&copy; 2026 David Milan Academy</p>
+    </footer>
+
+</body>
+</html>

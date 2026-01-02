@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería y Universidad | David Milan Academy</title>
+	<a href="index.html" class="back-link">← Volver a la Academia</a>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #4facfe; /* Azul Ingeniería */
+            --text-main: #e6f1ff;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+
+        header {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), 
+                        url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80');
+            background-size: cover; text-align: center; border-bottom: 2px solid var(--accent);
+        }
+
+        .uni-badge {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 5px 20px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+        
+        .sidebar { position: sticky; top: 20px; height: fit-content; }
+        .sidebar h4 { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 2px; }
+        .sidebar ul { list-style: none; }
+        .sidebar ul li { margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+        .sidebar ul li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .sidebar ul li a:hover { color: var(--accent); }
+
+        .unit-section { background: var(--secondary); border-radius: 8px; padding: 40px; margin-bottom: 40px; border-left: 5px solid var(--accent); }
+        .unit-tag { color: var(--accent); font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; display: block; }
+        
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 25px 0; }
+        .topic-item { color: var(--text-dim); font-size: 0.85rem; display: flex; align-items: center; }
+        .topic-item::before { content: "∫"; color: var(--accent); margin-right: 12px; font-weight: bold; font-size: 1.2rem; }
+
+        .unit-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-unit { flex: 1; text-align: center; padding: 12px; border-radius: 4px; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1); color: var(--white); }
+        .btn-filled { background: var(--accent); color: var(--primary); border: none; }
+        .btn-unit:hover { background: rgba(79, 172, 254, 0.1); border-color: var(--accent); }
+
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display:block;">
+            <a href="index.html" style="color:var(--accent); text-decoration:none; font-size:0.8rem;">← VOLVER AL PORTAL PRINCIPAL</a>
+            <div class="uni-badge" style="margin-top:20px;">Higher Education / Engineering</div>
+            <h1>Grados en Ingeniería</h1>
+            <p style="color: var(--text-dim)">Cálculo Avanzado, Álgebra Lineal y Electrónica Industrial</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h4>Áreas Académicas</h4>
+            <ul>
+                <li><a href="#calculo">Cálculo I y II (Análisis)</a></li>
+                <li><a href="#algebra">Álgebra Lineal y Geometría</a></li>
+                <li><a href="#circuitos">Teoría de Circuitos</a></li>
+                <li><a href="#analogica">Electrónica Analógica</a></li>
+                <li><a href="#digital">Sistemas Digitales y VHDL</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="calculo" class="unit-section">
+                <span class="unit-tag">ASIGNATURA TRONCAL</span>
+                <h2>Cálculo Infinitesimal</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Series y Sucesiones de números</div>
+                    <div class="topic-item">Cálculo de varias variables</div>
+                    <div class="topic-item">Ecuaciones Diferenciales (EDOs)</div>
+                    <div class="topic-item">Integrales de Línea y Superficie</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Guía de Estudio</a>
+                    <a href="#" class="btn-unit">Ejercicios Resueltos</a>
+                    <a href="#" class="btn-unit btn-filled">Clase Magistral</a>
+                </div>
+            </section>
+
+            <section id="algebra" class="unit-section">
+                <span class="unit-tag">ASIGNATURA TRONCAL</span>
+                <h2>Álgebra Lineal</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Espacios Vectoriales y Bases</div>
+                    <div class="topic-item">Aplicaciones Lineales (Matrices)</div>
+                    <div class="topic-item">Diagonalización (Autovalores)</div>
+                    <div class="topic-item">Formas Cuadráticas y Cónicas</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Guía de Estudio</a>
+                    <a href="#" class="btn-unit">Ejercicios Resueltos</a>
+                    <a href="#" class="btn-unit btn-filled">Clase Magistral</a>
+                </div>
+            </section>
+
+            <section id="circuitos" class="unit-section">
+                <span class="unit-tag">ESPECIALIDAD ELECTRÓNICA</span>
+                <h2>Teoría de Circuitos</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Análisis por Nudos y Mallas</div>
+                    <div class="topic-item">Teoremas de Thevenin y Norton</div>
+                    <div class="topic-item">Regímenes Transitorios (RLC)</div>
+                    <div class="topic-item">Sistemas Trifásicos y Fasores</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Formulario PDF</a>
+                    <a href="#" class="btn-unit">Problemas Examen</a>
+                    <a href="#" class="btn-unit btn-filled">Laboratorio Virtual</a>
+                </div>
+            </section>
+
+            <section id="analogica" class="unit-section">
+                <span class="unit-tag">ESPECIALIDAD ELECTRÓNICA</span>
+                <h2>Electrónica Analógica</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Modelado de Transistores (BJT/MOSFET)</div>
+                    <div class="topic-item">Amplificadores Operacionales Ideales</div>
+                    <div class="topic-item">Respuesta en Frecuencia (Bode)</div>
+                    <div class="topic-item">Fuentes de Alimentación Reguladas</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Diseño PCB</a>
+                    <a href="#" class="btn-unit">Problemas Examen</a>
+                    <a href="#" class="btn-unit btn-filled">Simulación LTSpice</a>
+                </div>
+            </section>
+
+            <section id="digital" class="unit-section">
+                <span class="unit-tag">ESPECIALIDAD ELECTRÓNICA</span>
+                <h2>Sistemas Digitales</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Lógica Combinacional Avanzada</div>
+                    <div class="topic-item">Máquinas de Estados (Moore/Mealy)</div>
+                    <div class="topic-item">Introducción a FPGAs y VHDL</div>
+                    <div class="topic-item">Microprocesadores y Memoria</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Apuntes VHDL</a>
+                    <a href="#" class="btn-unit">Ejercicios Digital</a>
+                    <a href="#" class="btn-unit btn-filled">Clase Magistral</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer style="text-align:center; padding: 60px; color:var(--text-dim); background: #060e1a;">
+        &copy; 2026 David Milan Academy | Formando la élite de la Ingeniería.
+    </footer>
+</body>
+</html>

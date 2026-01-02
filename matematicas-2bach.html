@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas II - 2º Bachillerato | David Milan Academy</title>
+<a href="index.html" class="back-link">← Volver a la Academia</a>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #ff4d4d; 
+            --text-main: #e6f1ff;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+
+        header {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), 
+                        url('https://images.unsplash.com/photo-1509228468518-180dd482180c?auto=format&fit=crop&q=80');
+            background-size: cover; text-align: center; border-bottom: 2px solid var(--accent);
+        }
+
+        .ebau-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+        
+        .sidebar { position: sticky; top: 20px; height: fit-content; }
+        .sidebar h4 { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 2px; border-left: 2px solid var(--accent); padding-left: 15px; }
+        .sidebar ul { list-style: none; }
+        .sidebar ul li { margin-bottom: 18px; }
+        .sidebar ul li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: block; }
+        .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
+
+        .unit-section { background: var(--secondary); border-radius: 15px; padding: 40px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
+        .unit-section:hover { border-color: var(--accent); }
+        .unit-tag { color: var(--accent); font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; display: block; text-transform: uppercase; }
+        
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 25px 0; }
+        .topic-item { color: var(--text-dim); font-size: 0.9rem; display: flex; align-items: center; }
+        .topic-item::before { content: "→"; color: var(--accent); margin-right: 10px; }
+
+        .unit-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+        .btn-unit { flex: 1; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: 1px solid var(--accent); color: var(--accent); min-width: 120px; }
+        .btn-filled { background: var(--accent); color: white; }
+        .btn-unit:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="grid-column: span 2;">
+                <a href="index.html" style="color:var(--accent); text-decoration:none; font-size:0.8rem;">← VOLVER</a>
+                <div class="ebau-badge" style="display:block; width:fit-content; margin: 20px auto;">Enfoque Selectividad</div>
+                <h1>Matemáticas II</h1>
+                <p style="color: var(--text-dim)">El camino definitivo hacia el 10 en la EBAU</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h4>Bloques EBAU</h4>
+            <ul>
+                <li><a href="#u1">01. Álgebra Lineal</a></li>
+                <li><a href="#u2">02. Análisis: Derivadas</a></li>
+                <li><a href="#u3">03. Análisis: Integrales</a></li>
+                <li><a href="#u4">04. Geometría 3D</a></li>
+                <li><a href="#u5">05. Probabilidad</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="u1" class="unit-section">
+                <span class="unit-tag">Unidad 01</span>
+                <h2>Álgebra: Matrices y Sistemas</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Rango de una Matriz</div>
+                    <div class="topic-item">Discusión: Rouché-Frobenius</div>
+                    <div class="topic-item">Matriz Inversa y Ecuaciones</div>
+                    <div class="topic-item">Problemas con Enunciado</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u2" class="unit-section">
+                <span class="unit-tag">Unidad 02</span>
+                <h2>Análisis I: Diferencial</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Límites y L'Hôpital</div>
+                    <div class="topic-item">Continuidad y Derivabilidad</div>
+                    <div class="topic-item">Teoremas (Bolzano, Rolle, Valor Medio)</div>
+                    <div class="topic-item">Optimización de Funciones</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u3" class="unit-section">
+                <span class="unit-tag">Unidad 03</span>
+                <h2>Análisis II: Integral</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Integrales Indefinidas (Métodos)</div>
+                    <div class="topic-item">Regla de Barrow</div>
+                    <div class="topic-item">Cálculo de Áreas entre curvas</div>
+                    <div class="topic-item">Áreas con Valor Absoluto</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u4" class="unit-section">
+                <span class="unit-tag">Unidad 04</span>
+                <h2>Geometría en el Espacio</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Posiciones Relativas (Recta/Plano)</div>
+                    <div class="topic-item">Ángulos y Distancias</div>
+                    <div class="topic-item">Puntos Simétricos</div>
+                    <div class="topic-item">Áreas y Volúmenes (Vectores)</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+
+            <section id="u5" class="unit-section">
+                <span class="unit-tag">Unidad 05</span>
+                <h2>Probabilidad y Estadística</h2>
+                <div class="topics-grid">
+                    <div class="topic-item">Probabilidad Condicionada</div>
+                    <div class="topic-item">Teorema de Bayes</div>
+                    <div class="topic-item">Distribución Binomial</div>
+                    <div class="topic-item">Distribución Normal</div>
+                </div>
+                <div class="unit-actions">
+                    <a href="#" class="btn-unit">Teoría PDF</a>
+                    <a href="#" class="btn-unit">Ejercicios EBAU</a>
+                    <a href="#" class="btn-unit btn-filled">Vídeo Clase</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer style="text-align:center; padding: 40px; color:var(--text-dim); font-size:0.8rem;">
+        &copy; 2026 David Milan Academy | Tu éxito en la EBAU comienza aquí.
+    </footer>
+</body>
+</html>
