@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemáticas I - 1º Bachillerato | David Milan Academy</title>
-<a href="index.html" class="back-link">← Volver a la Academia</a>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -35,6 +35,12 @@
             border-bottom: 1px solid rgba(100, 255, 218, 0.3);
         }
 
+        .container-header{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         .back-link { 
             color: var(--accent); 
             text-decoration: none; 
@@ -42,6 +48,7 @@
             text-transform: uppercase; 
             letter-spacing: 1px; 
             transition: 0.3s;
+            display:inline-block;
         }
         .back-link:hover { opacity: 0.7; }
 
@@ -208,7 +215,8 @@
                     <div class="topic-item">Sistemas e Inecuaciones</div>
                 </div>
                 <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
+                    <!-- ✅ CAMBIO AQUI: botón "Apuntes" apunta al enlace que pediste -->
+                    <a href="https://davidmilanacademy.com/cursos/dideno-apartamento-3d-floorplanner" class="btn-unit btn-notes" target="_blank" rel="noopener">Apuntes</a>
                     <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
                     <a href="#" class="btn-unit btn-video">Video Clase</a>
                 </div>
