@@ -1,298 +1,444 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matemáticas I - 1º Bachillerato | David Milan Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemáticas I - 1º Bachillerato | David Milan Academy</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0a192f;
-            --secondary: #112240;
-            --accent: #64ffda;
-            --text-main: #e6f1ff;
-            --text-dim: #8892b0;
-            --white: #ffffff;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--primary); 
-            color: var(--text-main); 
-            line-height: 1.6; 
-            scroll-behavior: smooth; 
-        }
+  <style>
+    :root {
+      --primary: #0a192f;
+      --secondary: #112240;
+      --accent: #64ffda;
+      --text-main: #e6f1ff;
+      --text-dim: #8892b0;
+      --white: #ffffff;
+    }
 
-        /* --- HEADER --- */
-        header {
-            padding: 80px 0;
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), 
-                        url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80');
-            background-size: cover; 
-            text-align: center; 
-            border-bottom: 1px solid rgba(100, 255, 218, 0.3);
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Montserrat', sans-serif; 
+      background-color: var(--primary); 
+      color: var(--text-main); 
+      line-height: 1.6; 
+      scroll-behavior: smooth; 
+    }
 
-        .container-header{
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* --- HEADER --- */
+    header {
+      padding: 80px 0;
+      background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), 
+                  url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80');
+      background-size: cover; 
+      text-align: center; 
+      border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+    }
 
-        .back-link { 
-            color: var(--accent); 
-            text-decoration: none; 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            transition: 0.3s;
-            display:inline-block;
-        }
-        .back-link:hover { opacity: 0.7; }
+    .container-header{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        h1 { font-size: 3rem; color: var(--white); margin-top: 15px; }
-        .course-info { color: var(--accent); font-weight: 300; letter-spacing: 2px; }
+    .back-link { 
+      color: var(--accent); 
+      text-decoration: none; 
+      font-size: 0.8rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      transition: 0.3s;
+      display:inline-block;
+    }
+    .back-link:hover { opacity: 0.7; }
 
-        /* --- LAYOUT PRINCIPAL --- */
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            display: grid; 
-            grid-template-columns: 280px 1fr; 
-            gap: 40px; 
-        }
+    h1 { font-size: 3rem; color: var(--white); margin-top: 15px; }
+    .course-info { color: var(--accent); font-weight: 300; letter-spacing: 2px; }
 
-        /* --- SIDEBAR NAVEGABLE --- */
-        .sidebar { 
-            position: sticky; 
-            top: 40px; 
-            height: fit-content; 
-        }
-        .sidebar h4 { 
-            color: var(--accent); 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            margin-bottom: 25px; 
-            letter-spacing: 2px; 
-            border-left: 2px solid var(--accent);
-            padding-left: 15px;
-        }
-        .sidebar ul { list-style: none; }
-        .sidebar ul li { margin-bottom: 18px; }
-        .sidebar ul li a { 
-            color: var(--text-dim); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            transition: 0.3s; 
-            display: block;
-        }
-        .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
+    /* --- LAYOUT PRINCIPAL --- */
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 40px 20px; 
+      display: grid; 
+      grid-template-columns: 280px 1fr; 
+      gap: 40px; 
+    }
 
-        /* --- UNIDADES DIDÁCTICAS --- */
-        .main-content { padding-bottom: 100px; }
-        
-        .unit-section { 
-            background: var(--secondary); 
-            border-radius: 15px; 
-            padding: 40px; 
-            margin-bottom: 40px; 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.4s ease;
-        }
-        .unit-section:hover { 
-            border-color: var(--accent); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+    /* --- SIDEBAR NAVEGABLE --- */
+    .sidebar { 
+      position: sticky; 
+      top: 40px; 
+      height: fit-content; 
+    }
+    .sidebar h4 { 
+      color: var(--accent); 
+      font-size: 0.75rem; 
+      text-transform: uppercase; 
+      margin-bottom: 25px; 
+      letter-spacing: 2px; 
+      border-left: 2px solid var(--accent);
+      padding-left: 15px;
+    }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li { margin-bottom: 18px; }
+    .sidebar ul li a { 
+      color: var(--text-dim); 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      transition: 0.3s; 
+      display: block;
+    }
+    .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
 
-        .unit-tag { 
-            background: rgba(100, 255, 218, 0.1); 
-            color: var(--accent); 
-            padding: 5px 15px; 
-            border-radius: 4px; 
-            font-size: 0.7rem; 
-            font-weight: bold; 
-            display: inline-block;
-            margin-bottom: 15px;
-        }
+    /* --- UNIDADES DIDÁCTICAS --- */
+    .main-content { padding-bottom: 100px; }
 
-        .unit-section h2 { font-size: 1.8rem; color: var(--white); margin-bottom: 20px; }
+    .unit-section { 
+      background: var(--secondary); 
+      border-radius: 15px; 
+      padding: 40px; 
+      margin-bottom: 40px; 
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: 0.4s ease;
+    }
+    .unit-section:hover { 
+      border-color: var(--accent); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
 
-        .topics-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 15px; 
-            margin-bottom: 35px; 
-        }
-        .topic-item { 
-            color: var(--text-dim); 
-            font-size: 0.9rem; 
-            display: flex; 
-            align-items: center; 
-        }
-        .topic-item::before { 
-            content: "▹"; 
-            color: var(--accent); 
-            margin-right: 12px; 
-            font-weight: bold;
-        }
+    .unit-tag { 
+      background: rgba(100, 255, 218, 0.1); 
+      color: var(--accent); 
+      padding: 5px 15px; 
+      border-radius: 4px; 
+      font-size: 0.7rem; 
+      font-weight: bold; 
+      display: inline-block;
+      margin-bottom: 15px;
+    }
 
-        /* --- BOTONES DE ACCIÓN --- */
-        .unit-actions { 
-            display: flex; 
-            gap: 15px; 
-            flex-wrap: wrap; 
-            border-top: 1px solid rgba(255,255,255,0.05); 
-            padding-top: 25px; 
-        }
-        .btn-unit { 
-            flex: 1; 
-            text-align: center; 
-            padding: 14px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-            transition: 0.3s;
-            min-width: 140px;
-        }
-        .btn-notes { background: rgba(255,255,255,0.03); color: var(--white); border: 1px solid rgba(255,255,255,0.1); }
-        .btn-exercises { background: rgba(100, 255, 218, 0.05); color: var(--accent); border: 1px solid var(--accent); }
-        .btn-video { background: var(--accent); color: var(--primary); }
+    .unit-section h2 { font-size: 1.8rem; color: var(--white); margin-bottom: 20px; }
 
-        .btn-unit:hover { transform: translateY(-3px); filter: brightness(1.1); }
+    .topics-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 15px; 
+      margin-bottom: 35px; 
+    }
+    .topic-item { 
+      color: var(--text-dim); 
+      font-size: 0.9rem; 
+      display: flex; 
+      align-items: center; 
+    }
+    .topic-item::before { 
+      content: "▹"; 
+      color: var(--accent); 
+      margin-right: 12px; 
+      font-weight: bold;
+    }
 
-        footer { 
-            background: #060e1a; 
-            padding: 60px 0; 
-            text-align: center; 
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
+    /* --- BOTONES DE ACCIÓN --- */
+    .unit-actions { 
+      display: flex; 
+      gap: 15px; 
+      flex-wrap: wrap; 
+      border-top: 1px solid rgba(255,255,255,0.05); 
+      padding-top: 25px; 
+    }
+    .btn-unit { 
+      flex: 1; 
+      text-align: center; 
+      padding: 14px; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      font-size: 0.75rem; 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+      transition: 0.3s;
+      min-width: 140px;
+      user-select:none;
+    }
+    .btn-notes { background: rgba(255,255,255,0.03); color: var(--white); border: 1px solid rgba(255,255,255,0.1); }
+    .btn-exercises { background: rgba(100, 255, 218, 0.05); color: var(--accent); border: 1px solid var(--accent); }
+    .btn-video { background: var(--accent); color: var(--primary); }
 
-        /* --- RESPONSIVO --- */
-        @media (max-width: 900px) {
-            .container { grid-template-columns: 1fr; }
-            .sidebar { display: none; }
-            h1 { font-size: 2.2rem; }
-        }
-    </style>
+    .btn-unit:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+    /* --- MODAL PDF --- */
+    .modal{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.70);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index:9999;
+    }
+    .modal.open{ display:flex; }
+    .modalCard{
+      width:min(1100px, 100%);
+      background: #081428;
+      border: 1px solid rgba(100,255,218,.22);
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: 0 18px 70px rgba(0,0,0,.6);
+    }
+    .modalTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 12px 12px;
+      background: rgba(255,255,255,.03);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .modalTop b{
+      font-size: 13px;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      color: rgba(230,241,255,.92);
+    }
+    .modalActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .miniBtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text-main);
+      text-decoration:none;
+      font-size: 12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .miniBtn:hover{ filter: brightness(1.08); }
+    .miniBtn.primary{
+      background: rgba(100,255,218,.16);
+      border-color: rgba(100,255,218,.35);
+      color: var(--accent);
+    }
+    .modalBody{
+      height: 78vh;
+      background: #070d1a;
+    }
+    .modalBody iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    footer { 
+      background: #060e1a; 
+      padding: 60px 0; 
+      text-align: center; 
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* --- RESPONSIVO --- */
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      h1 { font-size: 2.2rem; }
+      .modalBody{ height: 74vh; }
+    }
+  </style>
+
+  <script>
+    // ✅ TU PDF (Google Drive)
+    const DRIVE_VIEW_URL = "https://drive.google.com/file/d/1II2UT7K1a_-d454qfVS_RWVJvM0P2wHg/view?usp=sharing";
+    const DRIVE_PREVIEW_URL = "https://drive.google.com/file/d/1II2UT7K1a_-d454qfVS_RWVJvM0P2wHg/preview";
+    // Descarga directa (forzando):
+    const DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1II2UT7K1a_-d454qfVS_RWVJvM0P2wHg";
+  </script>
 </head>
+
 <body>
 
-    <header>
-        <div class="container-header">
-            <a href="index.html" class="back-link">← Volver a la Academia</a>
-            <h1>Matemáticas I</h1>
-            <p class="course-info">1º de Bachillerato | Ciencias y Tecnología</p>
-        </div>
-    </header>
-
-    <div class="container">
-        <aside class="sidebar">
-            <h4>Índice del Curso</h4>
-            <ul>
-                <li><a href="#u1">01. Números y Álgebra</a></li>
-                <li><a href="#u2">02. Trigonometría</a></li>
-                <li><a href="#u3">03. Geometría Analítica</a></li>
-                <li><a href="#u4">04. Funciones y Límites</a></li>
-                <li><a href="#u5">05. Iniciación a Derivadas</a></li>
-            </ul>
-        </aside>
-
-        <main class="main-content">
-            
-            <section id="u1" class="unit-section">
-                <span class="unit-tag">Módulo 01</span>
-                <h2>Números Reales y Álgebra</h2>
-                <div class="topics-grid">
-                    <div class="topic-item">Propiedades de los Logaritmos</div>
-                    <div class="topic-item">Factorización (Ruffini)</div>
-                    <div class="topic-item">Fracciones Algebraicas</div>
-                    <div class="topic-item">Sistemas e Inecuaciones</div>
-                </div>
-                <div class="unit-actions">
-                    <!-- ✅ CAMBIO AQUI: botón "Apuntes" apunta al enlace que pediste -->
-                    <a href="https://davidmilanacademy.com/cursos/dideno-apartamento-3d-floorplanner" class="btn-unit btn-notes" target="_blank" rel="noopener">Apuntes</a>
-                    <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-                    <a href="#" class="btn-unit btn-video">Video Clase</a>
-                </div>
-            </section>
-
-            <section id="u2" class="unit-section">
-                <span class="unit-tag">Módulo 02</span>
-                <h2>Trigonometría</h2>
-                <div class="topics-grid">
-                    <div class="topic-item">Razones y Circunferencia</div>
-                    <div class="topic-item">Teoremas de Seno y Coseno</div>
-                    <div class="topic-item">Ecuaciones Trigonométricas</div>
-                    <div class="topic-item">Identidades del ángulo doble</div>
-                </div>
-                <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
-                    <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-                    <a href="#" class="btn-unit btn-video">Video Clase</a>
-                </div>
-            </section>
-
-            <section id="u3" class="unit-section">
-                <span class="unit-tag">Módulo 03</span>
-                <h2>Geometría Analítica</h2>
-                <div class="topics-grid">
-                    <div class="topic-item">Vectores Libres y Operaciones</div>
-                    <div class="topic-item">Ecuaciones de la Recta</div>
-                    <div class="topic-item">Posiciones Relativas</div>
-                    <div class="topic-item">Cálculo de Ángulos y Áreas</div>
-                </div>
-                <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
-                    <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-                    <a href="#" class="btn-unit btn-video">Video Clase</a>
-                </div>
-            </section>
-
-            <section id="u4" class="unit-section">
-                <span class="unit-tag">Módulo 04</span>
-                <h2>Análisis: Funciones y Límites</h2>
-                <div class="topics-grid">
-                    <div class="topic-item">Dominio y Simetrías</div>
-                    <div class="topic-item">Cálculo de Límites</div>
-                    <div class="topic-item">Indeterminaciones clásicas</div>
-                    <div class="topic-item">Estudio de Continuidad</div>
-                </div>
-                <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
-                    <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-                    <a href="#" class="btn-unit btn-video">Video Clase</a>
-                </div>
-            </section>
-
-            <section id="u5" class="unit-section" style="border-left: 4px solid var(--accent);">
-                <span class="unit-tag">Módulo 05</span>
-                <h2>Iniciación a las Derivadas</h2>
-                <div class="topics-grid">
-                    <div class="topic-item">Concepto de Derivada</div>
-                    <div class="topic-item">Tablas de Derivación</div>
-                    <div class="topic-item">Recta Tangente</div>
-                    <div class="topic-item">Máximos y Mínimos</div>
-                </div>
-                <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
-                    <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-                    <a href="#" class="btn-unit btn-video">Video Clase</a>
-                </div>
-            </section>
-
-        </main>
+  <header>
+    <div class="container-header">
+      <a href="index.html" class="back-link">← Volver a la Academia</a>
+      <h1>Matemáticas I</h1>
+      <p class="course-info">1º de Bachillerato | Ciencias y Tecnología</p>
     </div>
+  </header>
 
-    <footer>
-        <p style="color: var(--white); margin-bottom: 10px;">David Milan Academy</p>
-        <p style="color: var(--text-dim); font-size: 0.8rem;">Especialistas en la formación de futuros ingenieros.</p>
-    </footer>
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Índice del Curso</h4>
+      <ul>
+        <li><a href="#u1">01. Números y Álgebra</a></li>
+        <li><a href="#u2">02. Trigonometría</a></li>
+        <li><a href="#u3">03. Geometría Analítica</a></li>
+        <li><a href="#u4">04. Funciones y Límites</a></li>
+        <li><a href="#u5">05. Iniciación a Derivadas</a></li>
+      </ul>
+    </aside>
 
+    <main class="main-content">
+      <section id="u1" class="unit-section">
+        <span class="unit-tag">Módulo 01</span>
+        <h2>Números Reales y Álgebra</h2>
+
+        <div class="topics-grid">
+          <div class="topic-item">Propiedades de los Logaritmos</div>
+          <div class="topic-item">Factorización (Ruffini)</div>
+          <div class="topic-item">Fracciones Algebraicas</div>
+          <div class="topic-item">Sistemas e Inecuaciones</div>
+        </div>
+
+        <div class="unit-actions">
+          <!-- ✅ PRIMER BOTÓN: abre visor + permite descargar -->
+          <a href="#" id="openPdfBtn" class="btn-unit btn-notes">📄 Abrir PDF</a>
+
+          <!-- (Opcional) si quieres mantener "Ejercicios" y "Video Clase" -->
+          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">Video Clase</a>
+        </div>
+      </section>
+
+      <section id="u2" class="unit-section">
+        <span class="unit-tag">Módulo 02</span>
+        <h2>Trigonometría</h2>
+        <div class="topics-grid">
+          <div class="topic-item">Razones y Circunferencia</div>
+          <div class="topic-item">Teoremas de Seno y Coseno</div>
+          <div class="topic-item">Ecuaciones Trigonométricas</div>
+          <div class="topic-item">Identidades del ángulo doble</div>
+        </div>
+        <div class="unit-actions">
+          <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
+          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">Video Clase</a>
+        </div>
+      </section>
+
+      <section id="u3" class="unit-section">
+        <span class="unit-tag">Módulo 03</span>
+        <h2>Geometría Analítica</h2>
+        <div class="topics-grid">
+          <div class="topic-item">Vectores Libres y Operaciones</div>
+          <div class="topic-item">Ecuaciones de la Recta</div>
+          <div class="topic-item">Posiciones Relativas</div>
+          <div class="topic-item">Cálculo de Ángulos y Áreas</div>
+        </div>
+        <div class="unit-actions">
+          <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
+          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">Video Clase</a>
+        </div>
+      </section>
+
+      <section id="u4" class="unit-section">
+        <span class="unit-tag">Módulo 04</span>
+        <h2>Análisis: Funciones y Límites</h2>
+        <div class="topics-grid">
+          <div class="topic-item">Dominio y Simetrías</div>
+          <div class="topic-item">Cálculo de Límites</div>
+          <div class="topic-item">Indeterminaciones clásicas</div>
+          <div class="topic-item">Estudio de Continuidad</div>
+        </div>
+        <div class="unit-actions">
+          <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
+          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">Video Clase</a>
+        </div>
+      </section>
+
+      <section id="u5" class="unit-section" style="border-left: 4px solid var(--accent);">
+        <span class="unit-tag">Módulo 05</span>
+        <h2>Iniciación a las Derivadas</h2>
+        <div class="topics-grid">
+          <div class="topic-item">Concepto de Derivada</div>
+          <div class="topic-item">Tablas de Derivación</div>
+          <div class="topic-item">Recta Tangente</div>
+          <div class="topic-item">Máximos y Mínimos</div>
+        </div>
+        <div class="unit-actions">
+          <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
+          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">Video Clase</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p style="color: var(--white); margin-bottom: 10px;">David Milan Academy</p>
+    <p style="color: var(--text-dim); font-size: 0.8rem;">Especialistas en la formación de futuros ingenieros.</p>
+  </footer>
+
+  <!-- ✅ MODAL PDF (visor) -->
+  <div class="modal" id="pdfModal" aria-hidden="true">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-label="Visor PDF">
+      <div class="modalTop">
+        <b>Apuntes — Unidad 1 (PDF)</b>
+        <div class="modalActions">
+          <a class="miniBtn" id="openNewTabBtn" href="#" target="_blank" rel="noopener">🔗 Abrir en Drive</a>
+          <a class="miniBtn primary" id="downloadBtn" href="#" rel="noopener">⬇️ Descargar PDF</a>
+          <button class="miniBtn" id="closeModalBtn" type="button">✖ Cerrar</button>
+        </div>
+      </div>
+      <div class="modalBody">
+        <iframe id="pdfFrame" src="" title="Vista previa PDF"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("openPdfBtn");
+    const modal = document.getElementById("pdfModal");
+    const frame = document.getElementById("pdfFrame");
+    const closeBtn = document.getElementById("closeModalBtn");
+    const openNewTabBtn = document.getElementById("openNewTabBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    // Set URLs
+    openNewTabBtn.href = DRIVE_VIEW_URL;
+    downloadBtn.href = DRIVE_DOWNLOAD_URL;
+
+    function openModal(){
+      frame.src = DRIVE_PREVIEW_URL; // vista embebida
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      frame.src = "";
+      document.body.style.overflow = "";
+    }
+
+    openBtn.addEventListener("click", (e)=>{
+      e.preventDefault();
+      openModal();
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e)=>{
+      if(e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+
+    // ✅ fallback: si Google Drive bloquea descarga en algunos casos,
+    // el enlace de descarga abre el flujo de Drive igualmente.
+    // Si quieres "descarga directa real" siempre, lo ideal es alojar el PDF en tu propio dominio.
+  </script>
 </body>
 </html>
