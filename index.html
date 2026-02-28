@@ -10,6 +10,7 @@
             --primary: #050a12;   /* Negro azulado */
             --secondary: #0a192f; /* Navy profundo */
             --accent: #c5a059;    /* Dorado Elite */
+            --accent-hover: #e2c28d;
             --text-main: #e6f1ff;
             --text-dim: #8892b0;
             --white: #ffffff;
@@ -44,10 +45,18 @@
         .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-decoration: none; }
         .logo span { color: var(--white); }
 
-        nav ul { display: flex; list-style: none; }
+        nav ul { display: flex; list-style: none; align-items: center; }
         nav ul li { margin-left: 30px; }
         nav ul li a { text-decoration: none; color: var(--text-main); font-size: 0.85rem; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         nav ul li a:hover { color: var(--accent); }
+
+        .btn-aula {
+            border: 1px solid var(--accent);
+            padding: 8px 15px;
+            color: var(--accent) !important;
+            font-weight: 700;
+        }
+        .btn-aula:hover { background: var(--accent); color: var(--primary) !important; }
 
         /* --- HERO --- */
         #inicio {
@@ -67,16 +76,16 @@
         .hero-p { font-size: 1.2rem; color: var(--text-dim); max-width: 700px; margin: 0 auto 40px; }
 
         /* --- SECCIONES --- */
-        section { padding: 120px 0; }
+        section { padding: 100px 0; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .subtitle { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
         h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--white); margin-top: 10px; }
 
-        /* --- GRID BACHILLERATO (TAL CUAL TU MODELO) --- */
+        /* --- GRID BACHILLERATO / PLANES --- */
         .grid-bach {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .bach-card {
@@ -85,46 +94,52 @@
             border-radius: 4px;
             border: 1px solid rgba(197, 160, 89, 0.2);
             transition: 0.3s;
+            position: relative;
         }
         .bach-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 
         .course-title { color: var(--accent); font-size: 1.6rem; margin-bottom: 25px; font-weight: 700; }
 
-        details {
-            background: rgba(255, 255, 255, 0.03);
-            margin-bottom: 12px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        /* --- ELEMENTOS DE PLANES --- */
+        .price { font-size: 3rem; color: var(--white); margin-bottom: 15px; font-weight: 700; }
+        .price span { font-size: 1rem; color: var(--text-dim); }
+        .plan-features { list-style: none; margin-bottom: 30px; }
+        .plan-features li { margin-bottom: 12px; font-size: 0.9rem; color: var(--text-dim); }
+        .plan-features li::before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: bold; }
+
+        .popular-badge {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: var(--primary); padding: 5px 20px;
+            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
         }
 
-        summary {
-            padding: 18px 20px;
-            cursor: pointer;
-            font-weight: 500;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.3s;
+        /* --- MODAL PASARELA --- */
+        .modal {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+            z-index: 1000; align-items: center; justify-content: center; padding: 20px;
         }
+        .modal-content {
+            background: var(--secondary); width: 100%; max-width: 500px;
+            padding: 40px; border: 1px solid var(--accent); border-radius: 4px; text-align: center;
+        }
+        .payment-grid { display: grid; gap: 15px; margin: 30px 0; }
+        .pay-btn {
+            padding: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+            color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            gap: 10px; font-weight: 700; transition: 0.3s;
+        }
+        .pay-btn:hover { border-color: var(--accent); background: rgba(197, 160, 89, 0.1); }
+        .pay-btn.stripe { background: #6772e5; border: none; }
+        .pay-btn.paypal { background: #ffc439; color: #111; border: none; }
+        .pay-btn.bizum { background: #00adef; border: none; }
 
+        /* --- ACCESORIOS --- */
+        details { background: rgba(255,255,255,0.03); margin-bottom: 12px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        summary { padding: 18px 20px; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
         summary:hover { background: rgba(197, 160, 89, 0.1); color: var(--accent); }
-
         .temario-content { padding: 20px; font-size: 0.9rem; color: var(--text-dim); border-top: 1px solid rgba(197, 160, 89, 0.2); }
-        
-        .btn-acceder { 
-            display: inline-block; 
-            margin-top: 15px; 
-            color: var(--primary); 
-            background: var(--accent);
-            text-decoration: none; 
-            font-size: 0.75rem; 
-            font-weight: 700;
-            padding: 10px 20px; 
-            border-radius: 4px; 
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .btn-acceder:hover { background: #e2c28d; box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
+        .btn-acceder { display: inline-block; margin-top: 15px; color: var(--primary); background: var(--accent); text-decoration: none; font-size: 0.75rem; font-weight: 700; padding: 10px 20px; border-radius: 4px; text-transform: uppercase; transition: 0.3s; }
+        .btn-acceder:hover { background: #e2c28d; }
 
         /* --- TABLA INGENIERÍA --- */
         .table-container { overflow-x: auto; border-radius: 4px; border: 1px solid rgba(197, 160, 89, 0.3); margin-top: 30px; }
@@ -132,11 +147,9 @@
         .academic-table th { background: rgba(197, 160, 89, 0.1); color: var(--accent); padding: 20px; text-align: left; text-transform: uppercase; font-size: 0.8rem; }
         .academic-table td { padding: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 
-        /* --- BOTONES --- */
         .btn-main { background: var(--accent); color: var(--primary); padding: 18px 45px; border-radius: 50px; font-weight: bold; text-decoration: none; transition: 0.3s; display: inline-block; text-transform: uppercase; }
         .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3); }
 
-        /* --- FORMULARIO --- */
         .form-box { background: var(--secondary); padding: 50px; border-radius: 4px; max-width: 800px; margin: 0 auto; border: 1px solid rgba(197, 160, 89, 0.2); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .form-group { display: flex; flex-direction: column; }
@@ -150,7 +163,6 @@
             h1 { font-size: 2.5rem; }
             .grid-bach { grid-template-columns: 1fr; }
             .form-grid { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
             nav ul { display: none; }
         }
     </style>
@@ -163,7 +175,9 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#bachillerato">Bachillerato</a></li>
             <li><a href="#ingenieria">Ingeniería</a></li>
+            <li><a href="#planes">Membresías</a></li>
             <li><a href="#contacto">Inscripción</a></li>
+            <li><a href="#" class="btn-aula">AULA VIRTUAL</a></li>
         </ul>
     </nav>
 
@@ -172,7 +186,51 @@
             <span class="subtitle" style="display:block; margin-bottom:20px;">Excelencia y Rigor Académico</span>
             <h1>Lidera con <span>Conocimiento</span></h1>
             <p class="hero-p">Formación de élite en Ingeniería, Bachillerato y ESO. Método único diseñado para resultados de máxima calificación.</p>
-            <a href="#contacto" class="btn-main">Reservar Plaza</a>
+            <a href="#planes" class="btn-main">Ver Planes de Acceso</a>
+        </div>
+    </section>
+
+    <section id="planes">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Planes de Suscripción</span>
+                <h2>Excelencia a tu medida</h2>
+            </div>
+            <div class="grid-bach">
+                <div class="bach-card">
+                    <h3 class="course-title">Plan Básico</h3>
+                    <div class="price">4,99€<span>/mes</span></div>
+                    <ul class="plan-features">
+                        <li>Acceso a Temarios Completos</li>
+                        <li>Ejercicios Resueltos PDF</li>
+                        <li>Foro de dudas técnico</li>
+                    </ul>
+                    <button onclick="abrirPago('Básico', 49)" class="btn-acceder" style="width:100%; border:none; cursor:pointer;">Suscribirse</button>
+                </div>
+                <div class="bach-card" style="border-color: var(--accent); transform: scale(1.05);">
+                    <div class="popular-badge">Recomendado</div>
+                    <h3 class="course-title">Plan Premium</h3>
+                    <div class="price">9,99€<span>/mes</span></div>
+                    <ul class="plan-features">
+                        <li>Todo lo del Plan Básico</li>
+                        <li>Clases Grupales en Directo</li>
+                        <li>Resolución de Exámenes EBAU</li>
+                        <li>Soporte 24/7</li>
+                    </ul>
+                    <button onclick="abrirPago('Premium', 99)" class="btn-acceder" style="width:100%; border:none; cursor:pointer;">Suscribirse</button>
+                </div>
+                <div class="bach-card">
+                    <h3 class="course-title">Plan Élite</h3>
+                    <div class="price">19,99€<span>/mes</span></div>
+                    <ul class="plan-features">
+                        <li>Todo lo del Plan Premium</li>
+                        <li>Tutorías 1-a-1 Individuales</li>
+                        <li>Preparación Superior Ingeniería</li>
+                        <li>Seguimiento de Excelencia</li>
+                    </ul>
+                    <button onclick="abrirPago('Élite', 199)" class="btn-acceder" style="width:100%; border:none; cursor:pointer;">Suscribirse</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -191,20 +249,13 @@
                         <summary>Matemáticas I</summary>
                         <div class="temario-content">
                             <p>Análisis real, trigonometría técnica y geometría analítica avanzada.</p>
-                            <a href="#" class="btn-acceder">Ir al Temario</a>
+                            <a href="matematicas1.html" class="btn-acceder">Ir al Temario</a>
                         </div>
                     </details>
                     <details>
                         <summary>Física y Química</summary>
                         <div class="temario-content">
                             <p>Cinemática, dinámica y estequiometría de alta precisión.</p>
-                            <a href="#" class="btn-acceder">Ir al Temario</a>
-                        </div>
-                    </details>
-                    <details>
-                        <summary>Electrónica / Tecnología</summary>
-                        <div class="temario-content">
-                            <p>Fundamentos de circuitos CC y lógica digital para ingeniería.</p>
                             <a href="#" class="btn-acceder">Ir al Temario</a>
                         </div>
                     </details>
@@ -216,20 +267,13 @@
                         <summary>Matemáticas II</summary>
                         <div class="temario-content">
                             <p>Matrices, determinantes, cálculo integral y geometría en R3.</p>
-                            <a href="#" class="btn-acceder">Ir al Temario</a>
+                            <a href="matematicas2.html" class="btn-acceder">Ir al Temario</a>
                         </div>
                     </details>
                     <details>
                         <summary>Física II</summary>
                         <div class="temario-content">
                             <p>Inducción magnética, óptica y física moderna.</p>
-                            <a href="#" class="btn-acceder">Ir al Temario</a>
-                        </div>
-                    </details>
-                    <details>
-                        <summary>Química II</summary>
-                        <div class="temario-content">
-                            <p>Termoquímica, cinética, Red-Ox y equilibrio químico.</p>
                             <a href="#" class="btn-acceder">Ir al Temario</a>
                         </div>
                     </details>
@@ -243,7 +287,6 @@
             <div class="section-header">
                 <span class="subtitle">Nivel Universitario</span>
                 <h2>Grados en Ingeniería</h2>
-                <p>Clases de excelencia para asignaturas de alta complejidad técnica.</p>
             </div>
             <div class="table-container">
                 <table class="academic-table">
@@ -258,17 +301,17 @@
                         <tr>
                             <td><strong>Cálculo Avanzado</strong></td>
                             <td>EDOs, Integrales Múltiples y Series</td>
-                            <td><a href="#" class="btn-acceder">Acceder</a></td>
+                            <td><a href="ingenieria.html" class="btn-acceder">Acceder</a></td>
                         </tr>
                         <tr>
                             <td><strong>Álgebra Lineal</strong></td>
                             <td>Espacios Vectoriales y Diagonalización</td>
-                            <td><a href="#" class="btn-acceder">Acceder</a></td>
+                            <td><a href="ingenieria.html" class="btn-acceder">Acceder</a></td>
                         </tr>
                         <tr>
                             <td><strong>Electrónica Industrial</strong></td>
                             <td>Teoría de Circuitos, Analógica y Digital</td>
-                            <td><a href="#" class="btn-acceder">Acceder</a></td>
+                            <td><a href="ingenieria.html" class="btn-acceder">Acceder</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -314,6 +357,39 @@
         <p style="color: var(--accent); font-family: 'Cinzel', serif; margin-bottom: 10px; letter-spacing: 2px;">DAVID MILAN ACADEMY</p>
         <p>&copy; 2026 Todos los derechos reservados. Expertos en Excelencia Académica.</p>
     </footer>
+
+    <div id="modalPago" class="modal">
+        <div class="modal-content">
+            <h3 id="planNombre" style="font-family:'Cinzel'; color:var(--accent); margin-bottom:10px;">Plan</h3>
+            <p>Total a pagar: <span id="planPrecio" style="font-weight:700; color:white;">0</span>€</p>
+            
+            <div class="payment-grid">
+                <button class="pay-btn stripe">💳 Tarjeta (Stripe)</button>
+                <button class="pay-btn paypal">🅿️ PayPal</button>
+                <button class="pay-btn bizum">📱 Bizum</button>
+            </div>
+            
+            <button onclick="cerrarPago()" style="background:transparent; border:none; color:var(--text-dim); cursor:pointer; text-decoration:underline;">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirPago(nombre, precio) {
+            document.getElementById('planNombre').innerText = 'Inscripción: ' + nombre;
+            document.getElementById('planPrecio').innerText = precio;
+            document.getElementById('modalPago').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarPago() {
+            document.getElementById('modalPago').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modalPago')) cerrarPago();
+        }
+    </script>
 
 </body>
 </html>
