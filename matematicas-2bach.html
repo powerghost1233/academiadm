@@ -4,86 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemáticas II - 2º Bachillerato | David Milan Academy</title>
-<a href="index.html" class="back-link">← Volver a la Academia</a>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a192f;
-            --secondary: #112240;
-            --accent: #ff4d4d; 
+            --primary: #050a12;   /* Negro azulado */
+            --secondary: #0a192f; /* Navy profundo */
+            --accent: #c5a059;    /* Dorado Elite */
+            --accent-hover: #e2c28d;
             --text-main: #e6f1ff;
             --text-dim: #8892b0;
             --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
-
-        header {
-            padding: 100px 0;
-            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), 
-                        url('https://images.unsplash.com/photo-1509228468518-180dd482180c?auto=format&fit=crop&q=80');
-            background-size: cover; text-align: center; border-bottom: 2px solid var(--accent);
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--primary); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            scroll-behavior: smooth; 
         }
 
-        .ebau-badge {
-            background: var(--accent);
-            color: white;
-            padding: 5px 20px;
-            border-radius: 50px;
-            font-weight: 700;
+        /* --- HEADER ELITE --- */
+        header {
+            padding: 80px 0;
+            background: linear-gradient(rgba(5, 10, 18, 0.9), rgba(5, 10, 18, 0.95)), 
+                        url('https://images.unsplash.com/photo-1509228468518-180dd482180c?auto=format&fit=crop&q=80');
+            background-size: cover; 
+            text-align: center; 
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 700;
+            transition: 0.3s;
             display: inline-block;
-            margin-bottom: 20px;
+        }
+        .back-link:hover { color: var(--white); transform: translateX(-5px); }
+
+        .ebau-badge {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 5px 20px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin: 20px 0;
         }
 
+        h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 3rem; 
+            color: var(--white); 
+            letter-spacing: 2px;
+        }
+
+        /* --- LAYOUT CONTENEDOR --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
         
-        .sidebar { position: sticky; top: 20px; height: fit-content; }
-        .sidebar h4 { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 2px; border-left: 2px solid var(--accent); padding-left: 15px; }
+        /* --- SIDEBAR --- */
+        .sidebar { position: sticky; top: 40px; height: fit-content; }
+        .sidebar h4 { 
+            color: var(--accent); 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            margin-bottom: 25px; 
+            letter-spacing: 2px; 
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
+        }
         .sidebar ul { list-style: none; }
         .sidebar ul li { margin-bottom: 18px; }
-        .sidebar ul li a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: block; }
-        .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
+        .sidebar ul li a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: block;
+        }
+        .sidebar ul li a:hover { color: var(--accent); transform: translateX(8px); }
 
-        .unit-section { background: var(--secondary); border-radius: 15px; padding: 40px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
-        .unit-section:hover { border-color: var(--accent); }
-        .unit-tag { color: var(--accent); font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; display: block; text-transform: uppercase; }
+        /* --- SECCIONES DE UNIDAD --- */
+        .unit-section { 
+            background: var(--secondary); 
+            padding: 40px; 
+            margin-bottom: 40px; 
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: 0.4s ease;
+        }
+        .unit-section:hover { 
+            border-color: var(--accent); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
         
-        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 25px 0; }
+        .unit-tag { 
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--accent); 
+            font-size: 0.7rem; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+            display: inline-block; 
+            padding: 4px 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; margin-bottom: 20px; color: var(--white); }
+        
+        .topics-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 15px; 
+            margin: 25px 0; 
+        }
         .topic-item { color: var(--text-dim); font-size: 0.9rem; display: flex; align-items: center; }
-        .topic-item::before { content: "→"; color: var(--accent); margin-right: 10px; }
+        .topic-item::before { 
+            content: "∫"; 
+            color: var(--accent); 
+            margin-right: 12px; 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+        }
 
-        .unit-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
-        .btn-unit { flex: 1; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: 1px solid var(--accent); color: var(--accent); min-width: 120px; }
-        .btn-filled { background: var(--accent); color: white; }
-        .btn-unit:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+        /* --- ACCIONES --- */
+        .unit-actions { 
+            display: flex; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+            margin-top: 30px; 
+            border-top: 1px solid rgba(197, 160, 89, 0.1); 
+            padding-top: 25px; 
+        }
+        
+        .btn-unit { 
+            flex: 1; 
+            text-align: center; 
+            padding: 12px; 
+            text-decoration: none; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            transition: 0.3s; 
+            border: 1px solid var(--accent); 
+            color: var(--accent); 
+            letter-spacing: 1px;
+            min-width: 130px;
+        }
+        
+        .btn-filled { 
+            background: var(--accent); 
+            color: var(--primary); 
+        }
+        
+        .btn-unit:hover { 
+            background: var(--accent); 
+            color: var(--primary); 
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+        }
 
-        @media (max-width: 900px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        footer { 
+            text-align: center; 
+            padding: 60px; 
+            color: var(--text-dim); 
+            background: #03070d; 
+            border-top: 2px solid var(--accent);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 900px) { 
+            .container { grid-template-columns: 1fr; } 
+            .sidebar { display: none; } 
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <div style="grid-column: span 2;">
-                <a href="index.html" style="color:var(--accent); text-decoration:none; font-size:0.8rem;">← VOLVER</a>
-                <div class="ebau-badge" style="display:block; width:fit-content; margin: 20px auto;">Enfoque Selectividad</div>
-                <h1>Matemáticas II</h1>
-                <p style="color: var(--text-dim)">El camino definitivo hacia el 10 en la EBAU</p>
-            </div>
+        <div class="container" style="display:block; padding: 0 20px;">
+            <a href="index.html" class="back-link">← Volver al Portal Principal</a>
+            <br>
+            <div class="ebau-badge">Enfoque Máxima Calificación EBAU</div>
+            <h1>Matemáticas <span>II</span></h1>
+            <p style="color: var(--text-dim); letter-spacing: 1px;">Dominio total de los bloques oficiales para el acceso a la Universidad</p>
         </div>
     </header>
 
     <div class="container">
         <aside class="sidebar">
-            <h4>Bloques EBAU</h4>
+            <h4>Bloques de Élite</h4>
             <ul>
                 <li><a href="#u1">01. Álgebra Lineal</a></li>
-                <li><a href="#u2">02. Análisis: Derivadas</a></li>
-                <li><a href="#u3">03. Análisis: Integrales</a></li>
-                <li><a href="#u4">04. Geometría 3D</a></li>
+                <li><a href="#u2">02. Análisis: Diferencial</a></li>
+                <li><a href="#u3">03. Análisis: Integral</a></li>
+                <li><a href="#u4">04. Geometría en R3</a></li>
                 <li><a href="#u5">05. Probabilidad</a></li>
             </ul>
         </aside>
@@ -111,7 +233,7 @@
                 <div class="topics-grid">
                     <div class="topic-item">Límites y L'Hôpital</div>
                     <div class="topic-item">Continuidad y Derivabilidad</div>
-                    <div class="topic-item">Teoremas (Bolzano, Rolle, Valor Medio)</div>
+                    <div class="topic-item">Teoremas fundamentales</div>
                     <div class="topic-item">Optimización de Funciones</div>
                 </div>
                 <div class="unit-actions">
@@ -125,10 +247,10 @@
                 <span class="unit-tag">Unidad 03</span>
                 <h2>Análisis II: Integral</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Integrales Indefinidas (Métodos)</div>
+                    <div class="topic-item">Cálculo de Primitivas</div>
                     <div class="topic-item">Regla de Barrow</div>
-                    <div class="topic-item">Cálculo de Áreas entre curvas</div>
-                    <div class="topic-item">Áreas con Valor Absoluto</div>
+                    <div class="topic-item">Áreas entre curvas</div>
+                    <div class="topic-item">Integrales por Partes y Cambio</div>
                 </div>
                 <div class="unit-actions">
                     <a href="#" class="btn-unit">Teoría PDF</a>
@@ -141,10 +263,10 @@
                 <span class="unit-tag">Unidad 04</span>
                 <h2>Geometría en el Espacio</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Posiciones Relativas (Recta/Plano)</div>
+                    <div class="topic-item">Posiciones Relativas</div>
                     <div class="topic-item">Ángulos y Distancias</div>
                     <div class="topic-item">Puntos Simétricos</div>
-                    <div class="topic-item">Áreas y Volúmenes (Vectores)</div>
+                    <div class="topic-item">Áreas y Volúmenes</div>
                 </div>
                 <div class="unit-actions">
                     <a href="#" class="btn-unit">Teoría PDF</a>
@@ -157,8 +279,8 @@
                 <span class="unit-tag">Unidad 05</span>
                 <h2>Probabilidad y Estadística</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Probabilidad Condicionada</div>
                     <div class="topic-item">Teorema de Bayes</div>
+                    <div class="topic-item">Probabilidad Total</div>
                     <div class="topic-item">Distribución Binomial</div>
                     <div class="topic-item">Distribución Normal</div>
                 </div>
@@ -171,8 +293,10 @@
         </main>
     </div>
 
-    <footer style="text-align:center; padding: 40px; color:var(--text-dim); font-size:0.8rem;">
-        &copy; 2026 David Milan Academy | Tu éxito en la EBAU comienza aquí.
+    <footer>
+        <p style="color: var(--accent); font-family: 'Cinzel', serif; letter-spacing: 2px; margin-bottom: 10px;">DAVID MILAN ACADEMY</p>
+        &copy; 2026 David Milan Academy | Tu éxito en la EBAU comienza con la excelencia técnica.
     </footer>
+
 </body>
 </html>
