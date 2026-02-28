@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electrónica y Tecnología - 1º Bachillerato | David Milán Academy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-	<a href="index.html" class="back-link">← Volver a la Academia</a>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a192f;
-            --secondary: #112240;
-            --accent: #bc13fe; /* Violeta Eléctrico para Electrónica */
+            --primary: #050a12;   /* Negro azulado */
+            --secondary: #0a192f; /* Navy profundo */
+            --accent: #c5a059;    /* Dorado Elite */
+            --accent-glow: rgba(197, 160, 89, 0.2);
             --text-main: #e6f1ff;
             --text-dim: #8892b0;
             --white: #ffffff;
@@ -26,14 +26,20 @@
             scroll-behavior: smooth; 
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER PREMIUM --- */
         header {
             padding: 80px 0;
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), 
+            background: linear-gradient(rgba(5, 10, 18, 0.9), rgba(5, 10, 18, 0.95)), 
                         url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80');
             background-size: cover; 
             text-align: center; 
-            border-bottom: 1px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .container-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .back-link { 
@@ -41,13 +47,15 @@
             text-decoration: none; 
             font-size: 0.8rem; 
             text-transform: uppercase; 
-            letter-spacing: 1px; 
+            letter-spacing: 2px; 
             transition: 0.3s;
+            display: inline-block;
+            font-weight: 700;
         }
-        .back-link:hover { opacity: 0.7; }
+        .back-link:hover { color: var(--white); transform: translateX(-5px); }
 
-        h1 { font-size: 3rem; color: var(--white); margin-top: 15px; }
-        .course-info { color: var(--accent); font-weight: 300; letter-spacing: 2px; }
+        h1 { font-family: 'Cinzel', serif; font-size: 3rem; color: var(--white); margin-top: 15px; letter-spacing: 2px; }
+        .course-info { color: var(--accent); font-weight: 500; letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; margin-top: 10px; }
 
         /* --- LAYOUT PRINCIPAL --- */
         .container { 
@@ -63,11 +71,11 @@
         .sidebar { position: sticky; top: 40px; height: fit-content; }
         .sidebar h4 { 
             color: var(--accent); 
-            font-size: 0.75rem; 
+            font-size: 0.8rem; 
             text-transform: uppercase; 
             margin-bottom: 25px; 
             letter-spacing: 2px; 
-            border-left: 2px solid var(--accent);
+            border-left: 3px solid var(--accent);
             padding-left: 15px;
         }
         .sidebar ul { list-style: none; }
@@ -75,33 +83,41 @@
         .sidebar ul li a { 
             color: var(--text-dim); 
             text-decoration: none; 
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             transition: 0.3s; 
             display: block;
         }
-        .sidebar ul li a:hover { color: var(--accent); transform: translateX(5px); }
+        .sidebar ul li a:hover { color: var(--accent); transform: translateX(8px); }
 
-        /* --- UNIDADES --- */
+        /* --- UNIDADES DIDÁCTICAS --- */
+        .main-content { padding-bottom: 100px; }
+
         .unit-section { 
             background: var(--secondary); 
-            border-radius: 15px; 
+            border-radius: 4px; 
             padding: 40px; 
             margin-bottom: 40px; 
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.1);
             transition: 0.4s ease;
         }
-        .unit-section:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(188, 19, 254, 0.1); }
+        .unit-section:hover { 
+            border-color: var(--accent); 
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
 
         .unit-tag { 
-            background: rgba(188, 19, 254, 0.1); 
+            background: rgba(197, 160, 89, 0.1); 
             color: var(--accent); 
             padding: 5px 15px; 
-            border-radius: 4px; 
+            border-radius: 2px; 
             font-size: 0.7rem; 
             font-weight: bold; 
             display: inline-block;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
+
+        .unit-section h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 20px; }
 
         .topics-grid { 
             display: grid; 
@@ -111,46 +127,57 @@
         }
         .topic-item { 
             color: var(--text-dim); 
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             display: flex; 
             align-items: center; 
         }
         .topic-item::before { 
-            content: "▣"; 
-            color: var(--accent);
+            content: "⏚"; /* Símbolo de Tierra/GND para electrónica */
+            color: var(--accent); 
             margin-right: 12px; 
-            font-size: 0.8rem;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        /* --- BOTONES --- */
+        /* --- BOTONES DE ACCIÓN --- */
         .unit-actions { 
             display: flex; 
             gap: 15px; 
             flex-wrap: wrap; 
-            border-top: 1px solid rgba(255,255,255,0.05); 
+            border-top: 1px solid rgba(197, 160, 89, 0.1); 
             padding-top: 25px; 
         }
         .btn-unit { 
             flex: 1; 
             text-align: center; 
             padding: 14px; 
-            border-radius: 8px; 
+            border-radius: 2px; 
             text-decoration: none; 
             font-size: 0.75rem; 
             font-weight: 700; 
             text-transform: uppercase; 
+            letter-spacing: 1px;
             transition: 0.3s;
             min-width: 140px;
         }
-        .btn-notes { background: rgba(255,255,255,0.03); color: var(--white); border: 1px solid rgba(255,255,255,0.1); }
-        .btn-exercises { background: rgba(188, 19, 254, 0.05); color: var(--accent); border: 1px solid var(--accent); }
-        .btn-video { background: var(--accent); color: var(--white); }
+        .btn-notes { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+        .btn-exercises { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+        .btn-video { background: var(--accent); color: var(--primary); border: 1px solid var(--accent); }
 
-        footer { background: #060e1a; padding: 60px 0; text-align: center; }
+        .btn-unit:hover { transform: translateY(-3px); box-shadow: 0 5px 15px var(--accent-glow); }
+        .btn-notes:hover { border-color: var(--white); }
+
+        footer { 
+            background: #03070d; 
+            padding: 60px 0; 
+            text-align: center; 
+            border-top: 2px solid var(--accent);
+        }
 
         @media (max-width: 900px) {
             .container { grid-template-columns: 1fr; }
             .sidebar { display: none; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -158,7 +185,7 @@
 
     <header>
         <div class="container-header">
-            <a href="index.html" class="back-link">← Volver a la Academia</a>
+            <a href="index.html" class="back-link">← Volver al Portal de Élite</a>
             <h1>Electrónica y Tecnología</h1>
             <p class="course-info">1º de Bachillerato | Fundamentos de Ingeniería</p>
         </div>
@@ -179,82 +206,82 @@
         <main class="main-content">
             
             <section id="u1" class="unit-section">
-                <span class="unit-tag">Unidad 01</span>
+                <span class="unit-tag">Módulo 01</span>
                 <h2>Análisis de Circuitos en CC</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Ley de Ohm y Joule</div>
-                    <div class="topic-item">Leyes de Kirchhoff</div>
-                    <div class="topic-item">Asociación de Resistencias</div>
-                    <div class="topic-item">Divisores de Tensión</div>
+                    <div class="topic-item">Leyes de Ohm y Joule</div>
+                    <div class="topic-item">Leyes de Kirchhoff (Nudos y Mallas)</div>
+                    <div class="topic-item">Asociación Serie/Paralelo</div>
+                    <div class="topic-item">Análisis de Divisores de Tensión</div>
                 </div>
                 <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría</a>
+                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
                     <a href="#" class="btn-unit btn-exercises">Prácticas</a>
                     <a href="#" class="btn-unit btn-video">Simulación</a>
                 </div>
             </section>
 
             <section id="u2" class="unit-section">
-                <span class="unit-tag">Unidad 02</span>
+                <span class="unit-tag">Módulo 02</span>
                 <h2>Componentes Pasivos</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Condensadores y Carga</div>
-                    <div class="topic-item">Inductancias y Magnetismo</div>
-                    <div class="topic-item">Relés y Actuadores</div>
-                    <div class="topic-item">Potenciómetros y LDR</div>
+                    <div class="topic-item">Condensadores: Carga y Descarga</div>
+                    <div class="topic-item">Inductancias y Electromagnetismo</div>
+                    <div class="topic-item">Relés y Sistemas de Control</div>
+                    <div class="topic-item">Sensores: LDR, NTC y PTC</div>
                 </div>
                 <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría</a>
+                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
                     <a href="#" class="btn-unit btn-exercises">Prácticas</a>
                     <a href="#" class="btn-unit btn-video">Simulación</a>
                 </div>
             </section>
 
             <section id="u3" class="unit-section">
-                <span class="unit-tag">Unidad 03</span>
+                <span class="unit-tag">Módulo 03</span>
                 <h2>Semiconductores</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">El Diodo LED y Rectificador</div>
-                    <div class="topic-item">Transistores BJT (Corte/Sat)</div>
-                    <div class="topic-item">El Transistor como Interruptor</div>
-                    <div class="topic-item">Fuentes de Alimentación</div>
+                    <div class="topic-item">Diodos Rectificadores y LED</div>
+                    <div class="topic-item">Transistores BJT: Funcionamiento</div>
+                    <div class="topic-item">Circuitos de Conmutación</div>
+                    <div class="topic-item">Estabilización y Fuentes</div>
                 </div>
                 <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría</a>
+                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
                     <a href="#" class="btn-unit btn-exercises">Prácticas</a>
                     <a href="#" class="btn-unit btn-video">Simulación</a>
                 </div>
             </section>
 
             <section id="u4" class="unit-section">
-                <span class="unit-tag">Unidad 04</span>
+                <span class="unit-tag">Módulo 04</span>
                 <h2>Electrónica Digital</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Sistemas Binario y Hexadecimal</div>
-                    <div class="topic-item">Puertas Lógicas (AND, OR, NOT)</div>
-                    <div class="topic-item">Tablas de Verdad</div>
-                    <div class="topic-item">Simplificación de Boole</div>
+                    <div class="topic-item">Álgebra de Boole y Lógica</div>
+                    <div class="topic-item">Puertas Lógicas Universales</div>
+                    <div class="topic-item">Simplificación por Karnaugh</div>
+                    <div class="topic-item">Codificadores y Decodificadores</div>
                 </div>
                 <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Teoría</a>
+                    <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
                     <a href="#" class="btn-unit btn-exercises">Prácticas</a>
                     <a href="#" class="btn-unit btn-video">Simulación</a>
                 </div>
             </section>
 
-            <section id="u5" class="unit-section" style="border-left: 4px solid var(--accent);">
-                <span class="unit-tag">Unidad 05</span>
-                <h2>Sistemas de Control</h2>
+            <section id="u5" class="unit-section" style="border-left: 5px solid var(--accent);">
+                <span class="unit-tag">Módulo 05</span>
+                <h2>Sistemas de Control y Arduino</h2>
                 <div class="topics-grid">
-                    <div class="topic-item">Introducción a Arduino</div>
-                    <div class="topic-item">Entradas y Salidas PWM</div>
-                    <div class="topic-item">Programación en C++ básico</div>
-                    <div class="topic-item">Sensores y Pantallas LCD</div>
+                    <div class="topic-item">Arquitectura de AtMega328P</div>
+                    <div class="topic-item">Programación Estructurada (C++)</div>
+                    <div class="topic-item">Control de Salidas PWM</div>
+                    <div class="topic-item">Lectura de Sensores Analógicos</div>
                 </div>
                 <div class="unit-actions">
-                    <a href="#" class="btn-unit btn-notes">Guía Kit</a>
+                    <a href="#" class="btn-unit btn-notes">Guía de Kit</a>
                     <a href="#" class="btn-unit btn-exercises">Código Fuente</a>
-                    <a href="#" class="btn-unit btn-video">Video Tutorial</a>
+                    <a href="#" class="btn-unit btn-video">Masterclass</a>
                 </div>
             </section>
 
@@ -262,7 +289,8 @@
     </div>
 
     <footer>
-        <p style="color: var(--text-dim);">&copy; 2026 David Milan Academy | Área de Ingeniería</p>
+        <p style="color: var(--accent); font-family: 'Cinzel', serif; letter-spacing: 2px; margin-bottom: 10px;">DAVID MILAN ACADEMY</p>
+        <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 David Milan Academy | Formación Técnica de Élite.</p>
     </footer>
 
 </body>
