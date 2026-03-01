@@ -171,6 +171,7 @@
 
     .btn-unit:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
     .btn-notes:hover { border-color: var(--white); }
+    .btn-exercises:hover { background: rgba(197, 160, 89, 0.1); }
     .btn-video:hover { background: var(--accent-hover); }
 
     /* --- MODAL PDF (DORADO) --- */
@@ -221,12 +222,6 @@
       h1 { font-size: 2.2rem; }
     }
   </style>
-
-  <script>
-    const DRIVE_VIEW_URL = "https://drive.google.com/file/d/1II2UT7K1a_-d454qfVS_RWVJvM0P2wHg/view?usp=sharing";
-    const DRIVE_PREVIEW_URL = "https://drive.google.com/file/d/1II2UT7K1a_-d454qfVS_RWVJvM0P2wHg/preview";
-    const DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1II2UT7K1a_-d454qfVS_RWVJvM0P2wHg";
-  </script>
 </head>
 
 <body>
@@ -262,9 +257,9 @@
           <div class="topic-item">Sistemas e Inecuaciones</div>
         </div>
         <div class="unit-actions">
-          <a href="#" id="openPdfBtn" class="btn-unit btn-notes">📄 Abrir Apuntes</a>
-          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-          <a href="#" class="btn-unit btn-video">Video Clase</a>
+          <a href="#" id="openTheoryBtn" class="btn-unit btn-notes">📄 Teoría y Apuntes</a>
+          <a href="#" id="openExercisesBtn" class="btn-unit btn-exercises">📝 Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">▶ Video Clase</a>
         </div>
       </section>
 
@@ -278,9 +273,9 @@
           <div class="topic-item">Identidades del Ángulo Doble</div>
         </div>
         <div class="unit-actions">
-          <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
-          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-          <a href="#" class="btn-unit btn-video">Video Clase</a>
+          <a href="#" class="btn-unit btn-notes">📄 Teoría PDF</a>
+          <a href="#" class="btn-unit btn-exercises">📝 Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">▶ Video Clase</a>
         </div>
       </section>
 
@@ -294,9 +289,9 @@
           <div class="topic-item">Optimización: Máximos y Mínimos</div>
         </div>
         <div class="unit-actions">
-          <a href="#" class="btn-unit btn-notes">Teoría PDF</a>
-          <a href="#" class="btn-unit btn-exercises">Ejercicios</a>
-          <a href="#" class="btn-unit btn-video">Video Clase</a>
+          <a href="#" class="btn-unit btn-notes">📄 Teoría PDF</a>
+          <a href="#" class="btn-unit btn-exercises">📝 Ejercicios</a>
+          <a href="#" class="btn-unit btn-video">▶ Video Clase</a>
         </div>
       </section>
     </main>
@@ -310,7 +305,7 @@
   <div class="modal" id="pdfModal" aria-hidden="true">
     <div class="modalCard" role="dialog" aria-modal="true">
       <div class="modalTop">
-        <b>Documentación Técnica — Unidad 1</b>
+        <b id="modalTitle">Documentación Técnica</b>
         <div class="modalActions">
           <a class="miniBtn" id="openNewTabBtn" href="#" target="_blank">🔗 Ver en Drive</a>
           <a class="miniBtn primary" id="downloadBtn" href="#">⬇️ Descargar</a>
@@ -324,32 +319,54 @@
   </div>
 
   <script>
-    const openBtn = document.getElementById("openPdfBtn");
     const modal = document.getElementById("pdfModal");
     const frame = document.getElementById("pdfFrame");
     const closeBtn = document.getElementById("closeModalBtn");
     const openNewTabBtn = document.getElementById("openNewTabBtn");
     const downloadBtn = document.getElementById("downloadBtn");
+    const modalTitle = document.getElementById("modalTitle");
 
-    openNewTabBtn.href = DRIVE_VIEW_URL;
-    downloadBtn.href = DRIVE_DOWNLOAD_URL;
+    // Función dinámica para abrir el modal con cualquier PDF
+    function openModal(driveId, titleText) {
+      const viewUrl = `https://drive.google.com/file/d/${driveId}/view?usp=sharing`;
+      const previewUrl = `https://drive.google.com/file/d/${driveId}/preview`;
+      const downloadUrl = `https://drive.google.com/uc?export=download&id=${driveId}`;
 
-    function openModal(){
-      frame.src = DRIVE_PREVIEW_URL;
+      openNewTabBtn.href = viewUrl;
+      downloadBtn.href = downloadUrl;
+      modalTitle.innerText = titleText;
+      frame.src = previewUrl;
+
       modal.classList.add("open");
       document.body.style.overflow = "hidden";
     }
 
-    function closeModal(){
+    function closeModal() {
       modal.classList.remove("open");
       frame.src = "";
       document.body.style.overflow = "";
     }
 
-    openBtn.addEventListener("click", (e)=>{ e.preventDefault(); openModal(); });
+    // --- EVENTOS DE LOS BOTONES DEL MÓDULO 1 ---
+
+    // Botón de TEORÍA Y APUNTES
+    document.getElementById("openTheoryBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      // Le pasamos el ID del PDF de Teoría y el título que queremos mostrar
+      openModal("144J2qnjLlqLWt8aCY1iluUqHXyXcoSMq", "Teoría de Élite — Módulo 1");
+    });
+
+    // Botón de EJERCICIOS
+    document.getElementById("openExercisesBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      // Le pasamos el ID del PDF de Ejercicios y el título que queremos mostrar
+      openModal("1xh-J1dv_n-gMZzviVSa7KUrmcXFVgrXu", "Ejercicios de Alto Rendimiento — Módulo 1");
+    });
+
+    // --- CERRAR EL MODAL ---
     closeBtn.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+    modal.addEventListener("click", (e) => { if(e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
   </script>
 </body>
 </html>
